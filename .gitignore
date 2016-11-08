@@ -1,0 +1,9 @@
+*.bin
+*.com
+*.exe
+*.32
+*.c32
+*.0
+memdisk
+diag/*
+dosutil/*
