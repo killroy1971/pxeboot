@@ -6,7 +6,7 @@ MENU TITLE PXE Boot Menu
 LABEL Kali
 MENU LABEL Kali Linux Live (amd64 failsafe)
 linux /kali/vmlinuz
-append root=/dev/nfs initrd=/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.11/ISO/Kali/ nomodeset username=root hostname=kali nosplash
+append root=/dev/nfs initrd=/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.11:/netboot/Kali/ nomodeset username=root hostname=kali nosplash
 
 LABEL Centos7
 MENU LABEL Centos 7.2
@@ -21,23 +21,22 @@ append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/ce
 LABEL Mint18
 MENU LABEL Linux Mint XFCE 18 Live DVD
 kernel mint/casper/vmlinuz
-append root=/dev/nfs initrd=mint/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.4.11:/Mint 
-
-label FedoraServer
-menu label Fedora Server
-kernel fedora-kernel/vmlinuz
-append initrd=fedora-kernel/initrd.img inst.stage2=http://download.fedoraproject.org/pub/fedora/linux/releases/24/Server/x86_64/os/ ip=dhcp
-#append initrd=fedora-server/images/pxeboot/initrd.img inst.stage2=http://192.168.4.11:20000/fedora-server/  ip=dhcp
-
-label FedoraServer2
-menu label Fedora Server NFS
-kernel fedora-kernel/vmlinuz
-append initrd=fedora-kernel/initrd.img ksdevice=bootif inst.stage2=http://download.fedoraproject.org/pub/fedora/linux/releases/24/Server/x86_64/os/ ip=dhcp ks=http://192.168.4.11/ks/ks.fedora24-svr
+append root=/dev/nfs initrd=mint/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.4.11:/netboot/Mint 
 
 LABEL ESET
 MENU LABEL Run ESET SysRescue
 kernel /eset/vmlinuz
-append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.11/ISO/eset-sysrescue 
+append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.11:/netboot/eset-sysrescue 
+
+LABEL Centos6-rescue
+MENU LABEL Centos 6.8 Rescue
+kernel centos7/isolinux/vmlinuz
+append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 rescue
+
+LABEL Centos7-rescue
+MENU LABEL Centos 7.2 Rescue
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 rescue
 
 LABEL SuperGRUB
 MENU LABEL Super Grub Boot Disk
