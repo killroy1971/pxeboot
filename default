@@ -9,12 +9,12 @@ linux /kali/vmlinuz
 append root=/dev/nfs initrd=/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.11:/netboot/Kali/ nomodeset username=root hostname=kali nosplash
 
 LABEL Centos7
-MENU LABEL Centos 7.2
+MENU LABEL Install Centos 7.2
 kernel centos7/isolinux/vmlinuz
 append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7
 
 LABEL Centos6
-MENU LABEL Centos 6.8
+MENU LABEL Install Centos 6.8
 kernel centos7/isolinux/vmlinuz
 append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6
 
@@ -22,6 +22,16 @@ LABEL Mint18
 MENU LABEL Linux Mint XFCE 18 Live DVD
 kernel mint/casper/vmlinuz
 append root=/dev/nfs initrd=mint/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.4.11:/netboot/Mint 
+
+LABEL Fedora-WKS-Install
+MENU LABEL Fedora 24 Workstation Install
+kernel fedora-kernel/vmlinuz
+append initrd=fedora-kernel/initrd.img inst.repo=nfs:192.168.4.11:/netboot/Fedora-Workstation
+
+LABEL Fedora-WKS-Live
+MENU LABEL Fedora 24 Workstation Live
+kernel fedora-kernel/vmlinuz
+append initrd=fedora-kernel/initrd.img ro root=live:http://192.168.4.11:20000/Fedora-Workstation/LiveOS/squashfs.img rd.live.image 
 
 LABEL ESET
 MENU LABEL Run ESET SysRescue
