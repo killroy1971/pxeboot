@@ -36,7 +36,7 @@ append initrd=Fedora-Workstation/images/pxeboot/initrd.img ro root=live:http://1
 LABEL Fedora-SVR-Install
 MENU LABEL Fedora 24 Server Install
 kernel Fedora-Server/images/pxeboot/vmlinuz
-append initrd=Fedora-Server/images/pxeboot/initrd.img inst.stage2=http://192.168.4.11:20000/Fedora-Server ip=dhcp
+append initrd=Fedora-Server/images/pxeboot/initrd.img inst.repo=http://192.168.4.11:20000/Fedora-Server inst.stage2=http://192.168.4.11:20000/Fedora-Server ip=dhcp
 
 LABEL ESET
 MENU LABEL Run ESET SysRescue
