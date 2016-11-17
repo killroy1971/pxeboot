@@ -1,10 +1,9 @@
 #PXEBOOT
 This repository contains files and instructions to set up a pxeboot enviornment for Ubuntu/Mint, RHEL/CentOS, and Fedora servers
-=======
-This repository contains a tftpboot menu file: default.
+---
+This repository contains a tftpboot menu file: default
 
-This file has entries for the following operating systems:
-=======
+##Operating System Entries:
 * Kali Linux, running in "Live" mode.
 * CentOS 7 installation, no kickstart entry.
 * CentOS 6 installation, no kickstart entry.
@@ -19,8 +18,8 @@ This file has entries for the following operating systems:
 * Memtest -- because who doesn't have this?
 
 
-Notes:
-=======
+##Notes:
+---
 
 The http entries are using port 20000, which I set up on my QNAP server.  This allows me to separate kickstart paths from the default NAS http path.  In a produciton environment, I'd perfer to use a separate VLAN that is only used to create machines.  In a "cloud" enviornment, I'd build a defulat image and use a tool like Ansible to customize the instance.
 
