@@ -22,3 +22,5 @@ Notes:
 The http entries are using port 20000, which I set up on my QNAP server.  This allows me to separate kickstart paths from the default NAS http path.  In a produciton environment, I'd perfer to use a separate VLAN that is only used to create machines.  In a "cloud" enviornment, I'd build a defulat image and use a tool like Ansible to customize the instance.
 
 To add kickstart entries, include a "ks=http://<path>" in the CentOS "append" entries, or an "inst.ks=http://<path>" in the Fedora "append" entries.
+
+I've also added my pxelinux.cfg .gitignore file for convienience sake.
