@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This repository contains a tftpboot menu file: default.
 
 This file has entries for the following operating systems:
@@ -24,3 +25,7 @@ The http entries are using port 20000, which I set up on my QNAP server.  This a
 To add kickstart entries, include a "ks=http://<path>" in the CentOS "append" entries, or an "inst.ks=http://<path>" in the Fedora "append" entries.
 
 I've also added my pxelinux.cfg .gitignore file for convienience sake.
+=======
+# pxeboot
+This repository contains files and instructions to set up a pxeboot enviornment for Ubuntu/Mint, RHEL/CentOS, and Fedora servers
+>>>>>>> 46275052e8838bb135db965b35b84dffb5f2b253
