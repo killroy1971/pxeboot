@@ -1,0 +1,32 @@
+MENU TITLE Tools Menu
+
+LABEL ESET
+MENU LABEL Run ESET SysRescue
+kernel /eset/vmlinuz
+append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.11:/n
+etboot/eset-sysrescue
+
+LABEL Centos6-rescue
+MENU LABEL Centos 6.8 Rescue
+kernel centos7/isolinux/vmlinuz
+append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 rescue
+
+LABEL Centos7-rescue
+MENU LABEL Centos 7.2 Rescue
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 rescue
+
+LABEL SuperGRUB
+MENU LABEL Super Grub Boot Disk
+kernel pxelinux.cfg/memdisk
+append initrd=bootdisk/grubdisk.img floppy raw
+
+LABEL Memtest
+MENU LABEL Memtest
+kernel bootdisk/memtestp0
+append -
+
+LABEL Return
+MENU LABEL Return
+kernel pxelinux.cfg/vesamenu.c32
+append pxelinux.cfg/default
