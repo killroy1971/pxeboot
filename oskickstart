@@ -3,7 +3,12 @@ MENU TITLE OS Install Menu
 LABEL Centos7-Vagrant
 MENU LABEL Create Vagrant Centos 7.2 Base Box
 kernel centos7/isolinux/vmlinuz
-append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/vagrant.centos7
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos7
+
+LABEL Centos6-Vagrant
+MENU LABEL Create Vagrant Centos 6.8 Base Box
+kernel centos6/isolinux/vmlinuz
+append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos6
 
 LABEL Centos7-Libvirt
 MENU LABEL Create a Libvrit Centos 7.2 Base Box
