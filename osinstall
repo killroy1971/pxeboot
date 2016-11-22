@@ -7,7 +7,7 @@ append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/ce
 
 LABEL Centos6
 MENU LABEL Install Centos 6.8
-kernel centos7/isolinux/vmlinuz
+kernel centos6/isolinux/vmlinuz
 append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6
 
 LABEL Fedora-WKS-Install
