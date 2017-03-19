@@ -5,6 +5,6 @@
 *.c32
 *.0
 memdisk
-diag/*
-dosutil/*
+diag/
+dosutil/
 
