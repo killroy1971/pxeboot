@@ -3,8 +3,7 @@ MENU TITLE Tools Menu
 LABEL ESET
 MENU LABEL Run ESET SysRescue
 kernel /eset/vmlinuz
-append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.11:/n
-etboot/eset-sysrescue
+append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.11:/netboot/eset-sysrescue
 
 LABEL Centos6-rescue
 MENU LABEL Centos 6.8 Rescue
