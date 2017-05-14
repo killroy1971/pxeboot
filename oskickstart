@@ -1,30 +1,34 @@
 MENU TITLE OS Install Menu
 
 LABEL Centos7-Vagrant
-MENU LABEL Create Vagrant Centos 7.2 Base Box
+MENU LABEL Create Vagrant Centos 7.3 Base Box
 kernel centos7/isolinux/vmlinuz
 append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos7
 
 LABEL Centos6-Vagrant
 MENU LABEL Create Vagrant Centos 6.8 Base Box
-kernel centos6/isolinux/vmlinuz
-append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos6
+kernel centos6/isolinux/vmlinuz append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos6
 
 LABEL Centos7-Libvirt-vbox
-MENU LABEL Create a Libvrit Centos 7.2 Vagrant Base Box
+MENU LABEL Create a Libvrit Centos 7.3 Vagrant Base Box
 kernel centos7/isolinux/vmlinuz
 append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/vagrant.libvirt.centos7
 
 LABEL Centos7-STIG-12GB
-MENU LABEL Create a STIG Compliant Centos 7.2 Box (12 GB)
+MENU LABEL Create a STIG Compliant Centos 7.3 Box (12 GB)
 kernel centos7/isolinux/vmlinuz
 append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/ks.centos7.stig-12GB
 
 
 LABEL Centos7-STIG-40GB
-MENU LABEL Create a STIG Compliant Centos 7.2 Box (40 GB)
+MENU LABEL Create a STIG Compliant Centos 7.3 Box (40 GB)
 kernel centos7/isolinux/vmlinuz
 append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/ks.centos7.stig-40GB
+
+LABEL Centos7-ovirt-template
+MENU LABEL Create CentOS 7.3 20GB OVirt Template
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/ks.centos7.ovirt-20GB
 
 LABEL Centos6
 MENU LABEL Install Centos 6.8
@@ -32,9 +36,19 @@ kernel centos7/isolinux/vmlinuz
 append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6
 
 LABEL Fedora-SVR-Install
-MENU LABEL Fedora 24 Server Install
+MENU LABEL Fedora 25 Server Install
 kernel Fedora-Server/images/pxeboot/vmlinuz
 append initrd=Fedora-Server/images/pxeboot/initrd.img inst.repo=http://192.168.4.11:20000/Fedora-Server inst.stage2=http://192.168.4.11:20000/Fedora-Server ip=dhcp
+
+LABEL Centos7-ovirt
+MENU LABEL OVirt CentOS 7 System Preparation
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/ks.centos7.ovirt-svr
+
+LABEL Centos7-openstack
+MENU LABEL OpenStack CentOS 7 System Preparation
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ks=http://192.168.4.11:20000/ks/ks.centos7.openstack-svr
 
 LABEL Return
 MENU LABEL Return
