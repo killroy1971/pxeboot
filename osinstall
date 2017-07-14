@@ -1,5 +1,10 @@
 MENU TITLE OS Install Menu
 
+LABEL rhel7
+MENU LABEL Install Red Hat Enterprise Linux 7.3
+kernel rhel7/isolinux/vmlinuz
+append initrd=rhel7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/rhel7
+
 LABEL Centos7
 MENU LABEL Install Centos 7.2
 kernel centos7/isolinux/vmlinuz

@@ -1,0 +1,41 @@
+MENU TITLE OS Install Menu
+
+LABEL Centos6-Vagrant-vbox
+MENU LABEL Create Vagrant Centos 6 Base Box
+kernel centos6/isolinux/vmlinuz append initrd=centos6/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos6 ip=dhcp ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos6
+
+LABEL Centos7-Vagrant-vbox
+MENU LABEL Create Vagrant Centos 7 Base Box
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/vagrant.vbox.centos7
+
+LABEL Centos7-Vagrant-libvirt
+MENU LABEL Create a Libvrit Centos 7 Vagrant Base Box
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/vagrant.libvirt.centos7
+
+LABEL Centos7-libvirt-12GB
+MENU LABEL CentOS 7 Libvirt 12 GB System Preparation
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.libvirt-12GB
+
+LABEL Centos7-libvirt-40GB
+MENU LABEL CentOS 7 Libvirt 40 GB System Preparation
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.libvirt-40GB
+
+LABEL Centos7-libvirt-STIG-12GB
+MENU LABEL Create a STIG Compliant Centos 7 Box (12 GB)
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.centos7.stig-12GB
+
+LABEL Centos7-libvirt-STIG-40GB
+MENU LABEL Create a STIG Compliant Centos 7 Box (40 GB)
+kernel centos7/isolinux/vmlinuz
+append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.centos7.stig-40GB
+
+LABEL Return
+MENU LABEL Return
+kernel pxelinux.cfg/vesamenu.c32
+append pxelinux.cfg/default
+

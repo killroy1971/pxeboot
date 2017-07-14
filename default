@@ -32,3 +32,8 @@ LABEL OS Kickstart
 MENU LABEL OS-Kickstart
 kernel pxelinux.cfg/vesamenu.c32
 append pxelinux.cfg/oskickstart
+
+LABEL VM Kickstart
+MENU LABEL VM-Kickstart
+kernel pxelinux.cfg/vesamenu.c32
+append pxelinux.cfg/vmkickstart
