@@ -1,39 +1,39 @@
-default pxelinux.cfg/vesamenu.c32
+default vesamenu.c32
 prompt 0
 
 MENU TITLE PXE Boot Menu
 
 LABEL Kali
 MENU LABEL Kali Linux Live (amd64 failsafe)
-linux /kali/vmlinuz
-append root=/dev/nfs initrd=/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.11:/netboot/Kali/ nomodeset username=root hostname=kali nosplash
+linux kali/vmlinuz
+append root=/dev/nfs initrd=kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.10:/srv/public/netboot/Kali nomodeset username=root hostname=kali nosplash
 
 LABEL Mint18
 MENU LABEL Linux Mint XFCE 18 Live DVD
 kernel mint/casper/vmlinuz
-append root=/dev/nfs initrd=mint/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.4.11:/netboot/Mint 
+append root=/dev/nfs initrd=mint/casper/initrd.lz boot=casper netboot=nfs nfsroot=192.168.4.10:/srv/public/netboot/Mint 
 
-LABEL Fedora-WKS-Live
-MENU LABEL Fedora 24 Workstation Live
-kernel Fedora-Workstation/images/pxeboot/vmlinuz
-append initrd=Fedora-Workstation/images/pxeboot/initrd.img ro root=live:http://192.168.4.11:20000/Fedora-Workstation/LiveOS/squashfs.img rd.live.image 
+LABEL fedora-WKS-Live
+MENU LABEL Fedora 25 Workstation Live
+kernel fedora25/wks/images/pxeboot/vmlinuz
+append initrd=fedora25/wks/images/pxeboot/initrd.img ro root=live:http://192.168.4.10/os/fedora25/wks/LiveOS/squashfs.img rd.live.image 
 
 LABEL OS Install
 MENU LABEL OS-Install
-kernel pxelinux.cfg/vesamenu.c32
+kernel vesamenu.c32
 append pxelinux.cfg/osinstall
 
 LABEL Tools
 MENU LABEL Tools
-kernel pxelinux.cfg/vesamenu.c32
+kernel vesamenu.c32
 append pxelinux.cfg/tools
 
 LABEL OS Kickstart
 MENU LABEL OS-Kickstart
-kernel pxelinux.cfg/vesamenu.c32
+kernel vesamenu.c32
 append pxelinux.cfg/oskickstart
 
 LABEL VM Kickstart
 MENU LABEL VM-Kickstart
-kernel pxelinux.cfg/vesamenu.c32
+kernel vesamenu.c32
 append pxelinux.cfg/vmkickstart

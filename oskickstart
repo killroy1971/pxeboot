@@ -2,21 +2,21 @@ MENU TITLE OS Install Menu
 
 LABEL Fedora-SVR-Install
 MENU LABEL Fedora 25 Server Install
-kernel Fedora-Server/images/pxeboot/vmlinuz
-append initrd=Fedora-Server/images/pxeboot/initrd.img inst.repo=http://192.168.4.11:20000/Fedora-Server inst.stage2=http://192.168.4.11:20000/Fedora-Server ip=dhcp
+kernel fedora25/srv/images/pxeboot/vmlinuz
+append initrd=fedora25/srv/images/pxeboot/initrd.img inst.repo=http://192.168.4.10/fedora25/srv inst.stage2=http://192.168.4.10/fedora25/srv ip=dhcp
 
 LABEL Centos7-ovirt
 MENU LABEL OVirt CentOS 7 System Preparation
-kernel centos7/isolinux/vmlinuz
-append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.centos7.ovirt-svr
+kernel centos7/srv/isolinux/vmlinuz
+append initrd=centos7/srv/isolinux/initrd.img inst.repo=http://192.168.4.10/centos7/srv ip=dhcp ks=http://192.168.4.10/ks/ks.centos7.ovirt-svr
 
 LABEL Centos7-openstack
 MENU LABEL OpenStack CentOS 7 System Preparation
-kernel centos7/isolinux/vmlinuz
-append initrd=centos7/isolinux/initrd.img inst.repo=http://192.168.4.11:20000/centos7 ip=dhcp ks=http://192.168.4.11:20000/ks/ks.centos7.openstack-svr
+kernel centos7/srv/isolinux/vmlinuz
+append initrd=centos7/srv/isolinux/initrd.img inst.repo=http://192.168.4.10/centos7/srv ip=dhcp ks=http://192.168.4.10/ks/ks.centos7.openstack-svr
 
 LABEL Return
 MENU LABEL Return
-kernel pxelinux.cfg/vesamenu.c32
+kernel vesamenu.c32
 append pxelinux.cfg/default
 
