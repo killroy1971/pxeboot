@@ -32,5 +32,5 @@ append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip
 LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
-append default
+append pxelinux.cfg/default
 

@@ -6,29 +6,29 @@ MENU TITLE PXE Boot Menu
 LABEL kali
 MENU LABEL kali Linux Live (amd64 failsafe)
 linux images/kali/vmlinuz
-append root=/dev/nfs initrd=images/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.10:/srv/public/netboot/kali nomodeset username=root hostname=kali nosplash
+append root=/dev/nfs initrd=images/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.10:/srv/netboot/kali nomodeset username=root hostname=kali nosplash
 
 LABEL fedora-WKS-Live
 MENU LABEL Fedora 25 Workstation Live
-kernel images/fedora25/wks/images/pxeboot/vmlinuz
-append initrd=images/fedora25/wks/images/pxeboot/initrd.img ro root=live:http://192.168.4.10/os/fedora25/wks/LiveOS/squashfs.img rd.live.image 
+kernel images/fedora25/wks/vmlinuz
+append initrd=images/fedora25/wks/initrd.img ro root=live:http://192.168.4.10/pub/os/fedora25/wks/LiveOS/squashfs.img rd.live.image 
 
 LABEL OS Install
 MENU LABEL OS-Install
 kernel vesamenu.c32
-append osinstall
+append pxelinux.cfg/osinstall
 
 LABEL Tools
 MENU LABEL Tools
 kernel vesamenu.c32
-append tools
+append pxelinux.cfg/tools
 
 LABEL OS Kickstart
 MENU LABEL OS-Kickstart
 kernel vesamenu.c32
-append oskickstart
+append pxelinux.cfg/oskickstart
 
 LABEL VM Kickstart
 MENU LABEL VM-Kickstart
 kernel vesamenu.c32
-append vmkickstart
+append pxelinux.cfg/vmkickstart
