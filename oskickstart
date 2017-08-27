@@ -1,22 +1,12 @@
-MENU TITLE OS Install Menu
+MENU TITLE OS Kickstart Install Menu
 
-LABEL Fedora-SVR-Install
-MENU LABEL Fedora 25 Server Install
-kernel fedora25/srv/images/pxeboot/vmlinuz
-append initrd=fedora25/srv/images/pxeboot/initrd.img inst.repo=http://192.168.4.10/fedora25/srv inst.stage2=http://192.168.4.10/fedora25/srv ip=dhcp
-
-LABEL Centos7-ovirt
-MENU LABEL OVirt CentOS 7 System Preparation
-kernel centos7/srv/isolinux/vmlinuz
-append initrd=centos7/srv/isolinux/initrd.img inst.repo=http://192.168.4.10/centos7/srv ip=dhcp ks=http://192.168.4.10/ks/ks.centos7.ovirt-svr
-
-LABEL Centos7-openstack
-MENU LABEL OpenStack CentOS 7 System Preparation
-kernel centos7/srv/isolinux/vmlinuz
-append initrd=centos7/srv/isolinux/initrd.img inst.repo=http://192.168.4.10/centos7/srv ip=dhcp ks=http://192.168.4.10/ks/ks.centos7.openstack-svr
+LABEL Centos7-SVR-Install
+MENU LABEL Centos 7 Server Install - Erase everything
+kernel centos7/vmlinuz
+append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 inst.stage2=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/centos7-svr.ks
 
 LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
-append pxelinux.cfg/default
+append default
 

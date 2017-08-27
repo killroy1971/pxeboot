@@ -1,32 +1,37 @@
 MENU TITLE OS Install Menu
 
-LABEL rhel7
+LABEL rhel7.3
 MENU LABEL Install Red Hat Enterprise Linux 7.3
-kernel RHEL7/srv/vmlinuz
-append initrd=RHEL7/srv/initrd.img inst.repo=http://192.168.4.10/os/rhel7
+kernel images/rhel7.3/srv/vmlinuz
+append initrd=rhel7.3/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/rhel7.3
+
+LABEL rhel7.4
+MENU LABEL Install Red Hat Enterprise Linux 7.4
+kernel images/rhel7.4/srv/vmlinuz
+append initrd=images/rhel7.4/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/rhel7.4
 
 LABEL centos7
-MENU LABEL Install Centos 7.3
-kernel centos7/srv/pxeboot/vmlinuz
-append initrd=centos7/srv/pxeboot/initrd.img inst.repo=http://192.168.4.10/os/centos7
+MENU LABEL Install Centos 7
+kernel images/centos7/srv/vmlinuz
+append initrd=images/centos7/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7
 
 LABEL centos6
-MENU LABEL Install Centos 6.8
-kernel centos6/srv/images/pxeboot/vmlinuz
-append initrd=centos6/srv/images/pxeboot/initrd.img inst.repo=http://192.168.4.10/os/centos6
+MENU LABEL Install Centos 6
+kernel images/centos6/srv/vmlinuz
+append initrd=images/centos6/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/centos6
 
 LABEL fedora-WKS-Install
 MENU LABEL fedora 25 Workstation Install
-kernel fedora25/wks/images/pxeboot/vmlinuz
-append initrd=fedora25/wks/images/pxeboot/initrd.img ro root=live:http://192.168.4.10/os/fedora25/wks/LiveOS/squashfs.img rd.live.image inst.stage2=http://192.168.4.10/fedora-Workstation ip=dhcp
+kernel images/fedora25/wks/vmlinuz
+append initrd=images/fedora25/wks/initrd.img ro root=live:http://192.168.4.10/pub/os/fedora25/wks/LiveOS/squashfs.img rd.live.image inst.stage2=http://192.168.4.10/pub/os/fedora25/wks ip=dhcp
 
 LABEL fedora-SVR-Install
 MENU LABEL fedora 25 Server Install
-kernel fedora25/srv/images/pxeboot/vmlinuz
-append initrd=fedora25/srv/images/pxeboot/initrd.img inst.repo=http://192.168.4.10/fedora25/srv inst.stage2=http://192.168.4.10/fedora25/srv ip=dhcp
+kernel images/fedora25/srv/vmlinuz
+append initrd=images/fedora25/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/fedora25/srv inst.stage2=http://192.168.4.10/pub/os/fedora25/srv ip=dhcp
 
 LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
-append pxelinux.cfg/default
+append default
 

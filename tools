@@ -2,30 +2,30 @@ MENU TITLE Tools Menu
 
 LABEL ESET
 MENU LABEL Run ESET SysRescue
-kernel eset/vmlinuz
-append root=/dev/nfs boot=casper initrd=eset/initrd.lz netboot=nfs nfsroot=192.168.4.10:/srv/public/netboot/eset-sysrescue
+kernel images/eset/vmlinuz
+append root=/dev/nfs boot=casper initrd=images/eset/initrd.lz netboot=nfs nfsroot=192.168.4.10:/srv/netboot/eset-sysrescue
 
 LABEL centos6-rescue
 MENU LABEL CentOS 6.8 Rescue
-kernel centos6/srv/images/pxeboot/vmlinuz
-append initrd=centos6/srv/images/pxeboot/initrd.img inst.repo=http://192.168.4.10/os/centos6 rescue
+kernel images/centos6/vmlinuz
+append initrd=images/centos6/initrd.img inst.repo=http://192.168.4.10/pub/os/centos6 rescue
 
 LABEL centos7-rescue
 MENU LABEL CentOS 7.2 Rescue
-kernel centos7/srv/pxeboot/vmlinuz
-append initrd=centos7/srv/pxeboot/initrd.img inst.repo=http://192.168.4.10/os/centos7 rescue
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 rescue
 
-LABEL SuperGRUB
-MENU LABEL Super Grub Boot Disk
-kernel memdisk
-append initrd=bootdisk/grubdisk.img floppy raw
+LABEL SpinRite
+MENU LABEL SpinRite 6
+kernel images/bootdisk/memdisk
+append initrd=images/bootdisk/spinrite.img floppy raw
 
 LABEL Memtest
 MENU LABEL Memtest
-kernel bootdisk/memtestp0
+kernel images/bootdisk/memtestp0
 append -
 
 LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
-append pxelinux.cfg/default
+append default
