@@ -3,29 +3,33 @@ MENU TITLE Tools Menu
 LABEL ESET
 MENU LABEL Run ESET SysRescue
 kernel images/eset/vmlinuz
-append root=/dev/nfs boot=casper initrd=images/eset/initrd.lz netboot=nfs nfsroot=192.168.4.10:/srv/netboot/eset-sysrescue
+append root=/dev/nfs boot=casper initrd=images/eset/initrd.lz netboot=nfs nfsroot=192.168.4.6:/mnt/storage01/netboot/eset
 
-LABEL centos6-rescue
-MENU LABEL CentOS 6.8 Rescue
-kernel images/centos6/vmlinuz
-append initrd=images/centos6/initrd.img inst.repo=http://192.168.4.10/pub/os/centos6 rescue
+LABEL rhel8-rescue
+MENU LABEL RHEL 8 Rescue
+kernel images/rhel8/vmlinuz
+append initrd=images/rhel8/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel8 rescue
 
-LABEL centos7-rescue
-MENU LABEL CentOS 7.2 Rescue
-kernel images/centos7/vmlinuz
-append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 rescue
+LABEL fedora-coreos
+MENU LABEL Fedora CoreOS
+KERNEL images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-kernel-x86_64
+APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img,images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img ignition.firstboot ignition.platform.id=metal ignition.config.url=http://192.168.4.24/ignition/coreos_default.ign systemd.unified_cgroup_hierarchy=0
+IPAPPEND 2
 
-LABEL SpinRite
-MENU LABEL SpinRite 6
-kernel images/bootdisk/memdisk
-append initrd=images/bootdisk/spinrite.img floppy raw
 
-LABEL Memtest
-MENU LABEL Memtest
-kernel images/bootdisk/memtestp0
-append -
+
+#LABEL SpinRite
+#MENU LABEL SpinRite 6
+#kernel images/bootdisk/memdisk
+#append initrd=images/bootdisk/spinrite.img floppy raw
+
+#LABEL Memtest
+#MENU LABEL Memtest
+#kernel images/bootdisk/memtestp0
+#append -
 
 LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
 append pxelinux.cfg/default
+

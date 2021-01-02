@@ -1,9 +1,27 @@
 MENU TITLE OS Kickstart Install Menu
 
-LABEL Centos7-SVR-Install
-MENU LABEL Centos 7 Server Install - Erase everything
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 inst.stage2=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/centos7-svr.ks
+LABEL RHEL-8-Install-100GB
+MENU LABEL RHEL 8 Install 100 GB drive - Erase everything
+kernel images/rhel8/vmlinuz
+append initrd=images/rhel8/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel8 inst.stage2=http://192.168.4.24/pub/os/rhel8 ip=dhcp ks=http://192.168.4.24/pub/ks/rhel8_100GB.ks
+
+LABEL fedora-coreos
+MENU LABEL Fedora CoreOS Default
+kernel images/fedora/coreos/vmlinuz
+append initrd=images/fedora/coreos/initrd.img,images/fedora/coreos/rootfs.img mitigations=auto,nosmt ignition.firstboot igniton.platfor=metal systemd.unified_cgroup_hierarchy=0 ip=dhcp ignition.config.url=http://192.168.4.24/pub/ignition/coreos_default.ign
+
+#append initrd=images/fedora/coreos/initrd.img,images/fedora/coreos/ignition.img mitigations=auto,nosmt ignition.firstboot igniton.platfor=metal systemd.unified_cgroup_hierarchy=0 ip=dhcp
+
+
+#append initrd=images/fedora/coreos/initrd.img,images/fedora/coreos/rootfs.img coreos.liveiso=http://192.168.4.24/pub/os/fedora/coreos ip=dhcp coreos.live.rootfs_url=http://192.168.4.24/pub/os/fedora/coreos
+
+#append initrd=images/fedora/coreos/initrd.img,images/fedora/coreos/rootfs.img coreos.liveiso=http://192.168.4.24/pub/os/fedora/coreos ignition.firstboot ignition.platform.id=metal
+
+
+#LABEL Centos7-SVR-Install
+#MENU LABEL Centos 7 Server Install - Erase everything
+#kernel images/centos7/vmlinuz
+#append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 inst.stage2=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/centos7-svr.ks
 
 LABEL Return
 MENU LABEL Return

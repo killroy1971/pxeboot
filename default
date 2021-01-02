@@ -3,15 +3,16 @@ prompt 0
 
 MENU TITLE PXE Boot Menu
 
-LABEL kali
-MENU LABEL kali Linux Live (amd64 failsafe)
-linux images/kali/vmlinuz
-append root=/dev/nfs initrd=images/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.10:/srv/netboot/kali nomodeset username=root hostname=kali nosplash
+#LABEL kali
+#MENU LABEL kali Linux Live (amd64 failsafe)
+#linux images/kali/vmlinuz
+#append root=/dev/nfs initrd=images/kali/initrd.img boot=live netboot=nfs nfsroot=192.168.4.24:/srv/netboot/kali nomodeset username=root hostname=kali nosplash
+#
 
 LABEL fedora-WKS-Live
-MENU LABEL Fedora 25 Workstation Live
-kernel images/fedora25/wks/vmlinuz
-append initrd=images/fedora25/wks/initrd.img ro root=live:http://192.168.4.10/pub/os/fedora25/wks/LiveOS/squashfs.img rd.live.image 
+MENU LABEL Fedora Workstation Live
+kernel images/fedora/wks/vmlinuz ip=dhcp
+append initrd=images/fedora/wks/initrd.img ro root=live:http://192.168.4.24/pub/os/fedora/wks/LiveOS/squashfs.img rd.live.image 
 
 LABEL OS Install
 MENU LABEL OS-Install

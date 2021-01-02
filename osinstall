@@ -1,34 +1,31 @@
 MENU TITLE OS Install Menu
 
-LABEL rhel7.3
-MENU LABEL Install Red Hat Enterprise Linux 7.3
-kernel images/rhel7.3/srv/vmlinuz
-append initrd=rhel7.3/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/rhel7.3
+LABEL rhel8
+MENU LABEL Install Red Hat Enterprise Linux 8 for x86_64
+kernel images/rhel8/vmlinuz
+append initrd=images/rhel8/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel8 ip=dhcp
 
-LABEL rhel7.4
-MENU LABEL Install Red Hat Enterprise Linux 7.4
-kernel images/rhel7.4/srv/vmlinuz
-append initrd=images/rhel7.4/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/rhel7.4
-
-LABEL centos7
-MENU LABEL Install Centos 7
-kernel images/centos7/srv/vmlinuz
-append initrd=images/centos7/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7
-
-LABEL centos6
-MENU LABEL Install Centos 6
-kernel images/centos6/srv/vmlinuz
-append initrd=images/centos6/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/centos6
+LABEL rhel7
+MENU LABEL Install Red Hat Enterprise Linux 7
+kernel images/rhel7/vmlinuz 
+append initrd=images/rhel7/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel7 ip=dhcp
 
 LABEL fedora-WKS-Install
-MENU LABEL fedora 25 Workstation Install
-kernel images/fedora25/wks/vmlinuz
-append initrd=images/fedora25/wks/initrd.img ro root=live:http://192.168.4.10/pub/os/fedora25/wks/LiveOS/squashfs.img rd.live.image inst.stage2=http://192.168.4.10/pub/os/fedora25/wks ip=dhcp
+MENU LABEL fedora 29 Workstation Install
+kernel images/fedora/wks/vmlinuz
+append initrd=images/fedora/wks/initrd.img ro root=live:http://192.168.4.24/pub/os/fedora/wks/LiveOS/squashfs.img rd.live.image inst.stage2=http://192.168.4.24/pub/os/fedora/wks ip=dhcp
 
-LABEL fedora-SVR-Install
-MENU LABEL fedora 25 Server Install
-kernel images/fedora25/srv/vmlinuz
-append initrd=images/fedora25/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/fedora25/srv inst.stage2=http://192.168.4.10/pub/os/fedora25/srv ip=dhcp
+LABEL coreos-default-vda
+MENU LABEL Install Fedora CoreOS Default (vda)
+KERNEL images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-kernel-x86_64
+APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img,images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst=yes coreos.inst.install_dev=/dev/vda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign
+IPAPPEND 2
+
+LABEL coreos-default-sda
+MENU LABEL Install Fedora CoreOS Default (sda)
+KERNEL images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-kernel-x86_64
+APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img,images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst=yes coreos.inst.install_dev=/dev/sda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign
+IPAPPEND 2
 
 LABEL Return
 MENU LABEL Return

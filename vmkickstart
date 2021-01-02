@@ -1,33 +1,29 @@
 MENU TITLE Virtual Machine OS Install Menu
 
-LABEL Centos6-Vagrant-vbox
-MENU LABEL Create Vagrant Centos 6 Base Box
-kernel centos6/srv/vmlinuz append initrd=centos6/srv/initrd.img inst.repo=http://192.168.4.10/pub/os/centos6 ip=dhcp ks=http://192.168.4.10/pub/ks/vagrant.vbox.centos6.ks
-
 LABEL Centos7-Vagrant-vbox
 MENU LABEL Create Vagrant Centos 7 Base Box
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/vagrant.vbox.centos7.ks
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/vagrant.vbox.centos7.ks
 
 LABEL Centos7-Vagrant-libvirt
 MENU LABEL Create a Libvrit Centos 7 Vagrant Base Box
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/vagrant.libvirt.centos7.ks
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/vagrant.libvirt.centos7.ks
 
 LABEL Centos7-libvirt-12GB
 MENU LABEL centos 7 Libvirt 12 GB System Preparation (STIG)
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/libvirt-centos7-stig-12GB.ks
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/libvirt-images/centos7-stig-12GB.ks
 
 LABEL Centos7-libvirt-40GB
 MENU LABEL centos 7 Libvirt 40 GB System Preparation (STIG)
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/libvirt-centos7-stig-40GB.ks
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/libvirt-images/centos7-stig-40GB.ks
 
 LABEL Centos7-libvirt
 MENU LABEL centos 7 Libvirt System Preparation
-kernel centos7/vmlinuz
-append initrd=centos7/initrd.img inst.repo=http://192.168.4.10/pub/os/centos7 ip=dhcp ks=http://192.168.4.10/pub/ks/libvirt-centos7.ks
+kernel images/centos7/vmlinuz
+append initrd=images/centos7/initrd.img inst.repo=http://192.168.4.24/pub/os/centos7 ip=dhcp ks=http://192.168.4.24/pub/ks/libvirt-images/centos7.ks
 
 LABEL Return
 MENU LABEL Return
