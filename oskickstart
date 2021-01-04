@@ -1,5 +1,10 @@
 MENU TITLE OS Kickstart Install Menu
 
+LABEL RHEL-8-Install-100GB-vda
+MENU LABEL RHEL 8 Install 100 GB drive - Erase everything (vda)
+kernel images/rhel8/vmlinuz
+append initrd=images/rhel8/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel8 inst.stage2=http://192.168.4.24/pub/os/rhel8 ip=dhcp ks=http://192.168.4.24/pub/ks/rhel8_100GB_vda.ks
+
 LABEL RHEL-8-Install-100GB
 MENU LABEL RHEL 8 Install 100 GB drive - Erase everything
 kernel images/rhel8/vmlinuz

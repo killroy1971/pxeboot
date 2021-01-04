@@ -18,14 +18,12 @@ append initrd=images/fedora/wks/initrd.img ro root=live:http://192.168.4.24/pub/
 LABEL coreos-default-vda
 MENU LABEL Install Fedora CoreOS Default (vda)
 KERNEL images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-kernel-x86_64
-APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img,images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst=yes coreos.inst.install_dev=/dev/vda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign
-IPAPPEND 2
+APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img coreos.live.rootfs_url=http://192.168.4.24/pub/os/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst.install_dev=/dev/vda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign ip=dhcp
 
 LABEL coreos-default-sda
 MENU LABEL Install Fedora CoreOS Default (sda)
 KERNEL images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-kernel-x86_64
-APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img,images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst=yes coreos.inst.install_dev=/dev/sda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign
-IPAPPEND 2
+APPEND initrd=images/fedora/coreos/fedora-coreos-33.20201201.3.0-live-initramfs.x86_64.img coreos.live.rootfs_url=http://192.168.4.24/pub/os/fedora/coreos/fedora-coreos-33.20201201.3.0-live-rootfs.x86_64.img coreos.inst.install_dev=/dev/sda coreos.inst.ignition_url=http://192.168.4.24/pub/ignition/coreos_default.ign ip=dhcp
 
 LABEL Return
 MENU LABEL Return

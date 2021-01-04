@@ -1,5 +1,10 @@
 MENU TITLE Virtual Machine OS Install Menu
 
+LABEL tower
+MENU LABEL RHEL 8 Tower OS install
+kernel images/rhel8/vmlinuz
+append initrd=images/rhel8/initrd.img inst.repo=http://192.168.4.24/pub/os/rhel8 inst.stage2=http://192.168.4.24/pub/os/rhel8 ip=dhcp ks=http://192.168.4.24/pub/ks/tower.ks
+
 LABEL Centos7-Vagrant-vbox
 MENU LABEL Create Vagrant Centos 7 Base Box
 kernel images/centos7/vmlinuz
@@ -29,4 +34,5 @@ LABEL Return
 MENU LABEL Return
 kernel vesamenu.c32
 append pxelinux.cfg/default
+
 
